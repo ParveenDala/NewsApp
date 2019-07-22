@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.news.NewsActivity">
+
+    <include layout="@layout/toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <fragment
+            android:id="@+id/listFragment"
+            class="com.parveendala.newsapp.ui.news.news_list.NewsListFragment"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.4"
+            tools:layout="@layout/news_list_fragment"></fragment>
+
+        <View
+            android:layout_width="@dimen/dimen_0_3"
+            android:layout_height="match_parent"
+            android:background="@color/colorBlack_20" />
+
+        <fragment
+            android:id="@+id/detailsFragment"
+            class="com.parveendala.newsapp.ui.news.details.NewsDetailsFragment"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="0.6"
+            tools:layout="@layout/news_details_fragment"></fragment>
+    </LinearLayout>
+</LinearLayout>

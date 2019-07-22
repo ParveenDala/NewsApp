@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:padding="@dimen/dimen_16">
+
+    <TextView
+        android:id="@+id/error"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/google_sans_medium"
+        android:gravity="center"
+        android:text="@string/msg_connection_error"
+        android:textColor="@color/colorBlack_65"
+        android:textSize="@dimen/dimen_14sp"
+        android:visibility="visible"
+        tools:text="@string/msg_something_wrong" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_retry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/error"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/dimen_22"
+        android:fontFamily="@font/google_sans_medium"
+        android:text="@string/retry"
+        android:visibility="visible"
+        app:backgroundTint="@color/colorAccent" />
+
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:visibility="visible" />
+</RelativeLayout>

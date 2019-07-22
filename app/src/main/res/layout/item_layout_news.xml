@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:foreground="?selectableItemBackground"
+    android:paddingStart="@dimen/dimen_16"
+    android:paddingTop="@dimen/dimen_16"
+    android:paddingEnd="@dimen/dimen_16">
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="@dimen/dimen_90"
+        android:layout_height="@dimen/dimen_90"
+        android:src="@drawable/image_bg_round"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:fontFamily="@font/google_sans_medium"
+        android:maxLines="3"
+        android:textColor="@color/colorBlack_80"
+        android:textSize="@dimen/dimen_14sp"
+        app:layout_constraintBaseline_toBaselineOf="@id/image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/image"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@string/news_title_2" />
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_16"
+        android:fontFamily="@font/google_sans_regular"
+        android:maxLines="1"
+        android:textColor="@color/colorBlack_50"
+        android:textSize="@dimen/dimen_10sp"
+        app:layout_constraintStart_toStartOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@+id/title"
+        tools:text="@string/news_time" />
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/bottom_barrier"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="image,time" />
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="@dimen/dimen_0_3"
+        android:layout_marginTop="@dimen/dimen_16"
+        android:background="@color/colorBlack_20"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bottom_barrier" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
