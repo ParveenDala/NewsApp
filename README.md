@@ -5,26 +5,26 @@ NewsApp is android application based on **MVVM architecture**, loads the popular
 
 The application get the content from the [NewsAPI.org](https://newsapi.org), display it and store it on the device for work in offline mode.
 
-### Screenshots:
+## Screenshots:
 
 <p align="center">
-<img src="screens/1.jpg" width="200"/>
-<img src="screens/2.jpg" width="200"/>
+<img src="screens/1.jpg" width="45%"/>
+<img src="screens/2.jpg" width="45%"/>
 </p>
 <p align="center">
-<img src="screens/3.jpg" width="200"/>
-<img src="screens/4.jpg" width="200"/>
+<img src="screens/3.jpg" width="45%"/>
+<img src="screens/4.jpg" width="45%"/>
 </p>
 <p align="center">
-<img src="screens/5.jpg" width="200"/>
-<img src="screens/6.jpg" width="200"/>
+<img src="screens/5.jpg" width="45%"/>
+<img src="screens/6.jpg" width="45%"/>
 </p>
 
 
-### Architecture and Tech-stack:
+## Architecture and Tech-stack:
 
 <p align="center">
-<img src="screens/mvvm_image.png" width="200"/>
+<img src="screens/mvvm_image.png" width="100%"/>
 </p>
 
 1. Based on **MVVM architecture** and repository pattern.
@@ -37,7 +37,7 @@ The application get the content from the [NewsAPI.org](https://newsapi.org), dis
 8. The application support **phone and tablet** by using fragments. In phone the fragment change by click on some item in the list. In tablet they display side by side, and the details fragment change the content by item click.
 
 
-### How to build on your environment
+## How to build on your environment
 
 1. Clone
 2. Get the API key from  [NewsAPI.org](https://newsapi.org/)
@@ -46,7 +46,7 @@ The application get the content from the [NewsAPI.org](https://newsapi.org), dis
 5. Test
 
 
-### Used libraries:
+## Used libraries:
 
 - [Android architecture components](https://developer.android.com/topic/libraries/architecture/index.html)
 - [Room Persistence Library](https://developer.android.com/topic/libraries/architecture/room.html)
@@ -58,6 +58,6 @@ The application get the content from the [NewsAPI.org](https://newsapi.org), dis
 
 
 
-### License
+## License
 
 GNU General Public License v3.0
