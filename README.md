@@ -12,7 +12,7 @@ The application get the content from the [NewsAPI.org](https://newsapi.org), dis
 <img src="screens/2.jpg" width="45%"/>
 </p>
 <p align="center">
-<img src="screens/3.jpg" width="90%"/>
+<img src="screens/3.png" width="90%"/>
 </p>
 <p align="center">
 <img src="screens/5.jpg" width="45%"/>
@@ -23,7 +23,7 @@ The application get the content from the [NewsAPI.org](https://newsapi.org), dis
 <img src="screens/8.jpg" width="45%"/>
 </p>
 <p align="center">
-<img src="screens/4.jpg" width="90%"/>
+<img src="screens/4.png" width="90%"/>
 </p>
 
 
