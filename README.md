@@ -12,12 +12,18 @@ The application get the content from the [NewsAPI.org](https://newsapi.org), dis
 <img src="screens/2.jpg" width="45%"/>
 </p>
 <p align="center">
-<img src="screens/3.jpg" width="45%"/>
-<img src="screens/4.jpg" width="45%"/>
+<img src="screens/3.jpg" width="90%"/>
 </p>
 <p align="center">
 <img src="screens/5.jpg" width="45%"/>
 <img src="screens/6.jpg" width="45%"/>
+</p>
+<p align="center">
+<img src="screens/7.jpg" width="45%"/>
+<img src="screens/8.jpg" width="45%"/>
+</p>
+<p align="center">
+<img src="screens/4.jpg" width="90%"/>
 </p>
 
 
@@ -41,7 +47,7 @@ The application get the content from the [NewsAPI.org](https://newsapi.org), dis
 
 1. Clone
 2. Get the API key from  [NewsAPI.org](https://newsapi.org/)
-3. Add your api key
+3. Add your api key (gradle.properties)
 4. Build
 5. Test
 

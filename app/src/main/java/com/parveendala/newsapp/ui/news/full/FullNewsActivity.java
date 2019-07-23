@@ -14,13 +14,21 @@ import com.parveendala.newsapp.R;
 import com.parveendala.newsapp.util.Constants;
 import com.parveendala.newsapp.util.NetworkUtil;
 
+import javax.inject.Inject;
+
+import dagger.android.support.DaggerAppCompatActivity;
+
 /*****************
  * Parveen Dala
  * News App, July 2019
  */
-public class FullNewsActivity extends AppCompatActivity {
+public class FullNewsActivity extends DaggerAppCompatActivity {
+
+    @Inject
+    NetworkUtil networkUtil;
 
     private WebView webView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +64,7 @@ public class FullNewsActivity extends AppCompatActivity {
         webView.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
         webView.getSettings().setBuiltInZoomControls(false);
         webView.getSettings().setDomStorageEnabled(true);
-        if (NetworkUtil.isNetworkAvailable(this)) {
+        if (networkUtil.isNetworkAvailable()) {
             webView.loadUrl(url);
             Toast.makeText(this, "Loading...", Toast.LENGTH_SHORT).show();
         } else {

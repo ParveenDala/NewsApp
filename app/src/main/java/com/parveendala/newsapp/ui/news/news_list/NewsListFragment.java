@@ -18,7 +18,6 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.bumptech.glide.RequestManager;
 import com.parveendala.newsapp.R;
 import com.parveendala.newsapp.data.News;
 import com.parveendala.newsapp.ui.news.details.NewsDetailsFragment;
@@ -39,6 +38,8 @@ import dagger.android.support.DaggerFragment;
 public class NewsListFragment extends DaggerFragment implements ItemClickListener {
     private static final String TAG = "NewsListFragment";
 
+    @Inject
+    NetworkUtil networkUtil;
     @Inject
     ViewModelProviderFactory viewModelProviderFactory;
 
@@ -124,8 +125,14 @@ public class NewsListFragment extends DaggerFragment implements ItemClickListene
                     case END_OF_THE_LIST:
                         break;
                     case ERROR:
-                    case INITIAL_ERROR:
                         showError(networkState.getMessage());
+                        break;
+                    case INITIAL_ERROR:
+                        if (networkUtil.isNetworkAvailable())
+                            showError(getString(R.string.msg_something_wrong));
+                        else
+                            showError(getString(R.string.msg_connection_error));
+
                         break;
                 }
             } else {
@@ -136,12 +143,13 @@ public class NewsListFragment extends DaggerFragment implements ItemClickListene
     }
 
     private void refreshNews() {
-        if (NetworkUtil.isNetworkAvailable(getActivity())) {
+        if (networkUtil.isNetworkAvailable()) {
             newsListViewModel.refresh();
             showLoading(true);
         } else {
             swipeRefreshLayout.setRefreshing(false);
         }
+
     }
 
     private void showLoading(boolean isShowing) {

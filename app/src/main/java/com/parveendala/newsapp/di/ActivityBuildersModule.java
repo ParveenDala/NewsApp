@@ -5,6 +5,7 @@ import com.parveendala.newsapp.di.news.NewsModule;
 import com.parveendala.newsapp.di.news.NewsScope;
 import com.parveendala.newsapp.di.news.NewsViewModelModule;
 import com.parveendala.newsapp.ui.news.NewsActivity;
+import com.parveendala.newsapp.ui.news.full.FullNewsActivity;
 
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
@@ -19,5 +20,8 @@ public abstract class ActivityBuildersModule {
     @NewsScope
     @ContributesAndroidInjector(modules = {NewsModule.class, NewsViewModelModule.class, FragmentBuildersModule.class})
     public abstract NewsActivity provideNewsActivity();
+
+    @ContributesAndroidInjector()
+    public abstract FullNewsActivity provideFullNewsActivity();
 
 }

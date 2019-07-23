@@ -32,7 +32,6 @@ public class NewsRepository {
     private NewsDb newsDb;
     private NewsDataSourceFactory dataSourceFactory;
 
-
     @Inject
     public NewsRepository(NewsDataSourceFactory dataSourceFactory, NewsDb newsDb) {
         this.dataSourceFactory = dataSourceFactory;
@@ -79,6 +78,8 @@ public class NewsRepository {
                 liveDataMerger.removeSource(newsDb.getNews());
                 if (value != null && value.size() > 0)
                     networkStateMediatorLiveData.setValue(NetworkState.DATABASE);
+                else
+                    networkStateMediatorLiveData.setValue(new NetworkState(NetworkState.Status.INITIAL_ERROR, null));
             });
         }
 

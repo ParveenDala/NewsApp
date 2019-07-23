@@ -76,7 +76,7 @@ public class NewsPageKeyedDataSource extends PageKeyedDataSource<String, News> {
 
                     @Override
                     public void onError(Throwable e) {
-                        networkState.postValue(new NetworkState(NetworkState.Status.INITIAL_ERROR, e.getLocalizedMessage()));
+                        //networkState.postValue(new NetworkState(NetworkState.Status.INITIAL_ERROR, e.getLocalizedMessage()));
                         callback.onResult(new ArrayList<>(), null, String.valueOf(FIRST_PAGE));
                         //setRetryCompletable(() -> loadInitial(params, callback));
                     }

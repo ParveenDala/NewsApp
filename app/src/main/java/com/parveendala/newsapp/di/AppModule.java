@@ -11,10 +11,12 @@ import com.bumptech.glide.load.resource.bitmap.RoundedCorners;
 import com.bumptech.glide.request.RequestOptions;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.parveendala.newsapp.BuildConfig;
 import com.parveendala.newsapp.R;
 import com.parveendala.newsapp.database.NewsDatabase;
 import com.parveendala.newsapp.util.Constants;
 import com.parveendala.newsapp.util.DateDeserializer;
+import com.parveendala.newsapp.util.NetworkUtil;
 
 import java.io.IOException;
 import java.util.Date;
@@ -39,6 +41,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
 @Module
 public class AppModule {
     private static final String TAG = "AppModule";
+
+    @Singleton
+    @Provides
+    static NetworkUtil provideNetworkUtil(Application application) {
+        return new NetworkUtil(application);
+    }
 
     @Singleton
     @Provides
@@ -71,7 +79,7 @@ public class AppModule {
                 Request original = chain.request();
 
                 Request request = original.newBuilder()
-                        .header("x-api-key", Constants.API_KEY)
+                        .header("x-api-key", BuildConfig.API_KEY)
                         .build();
 
                 return chain.proceed(request);
